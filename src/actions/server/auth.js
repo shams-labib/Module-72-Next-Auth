@@ -31,5 +31,10 @@ export const postUser = async (payload) => {
       success: true,
       massage: `User created success ${result.insertedId.toString()}`,
     };
+  } else {
+    return {
+      success: false,
+      massage: `Something went wrong`,
+    };
   }
 };
