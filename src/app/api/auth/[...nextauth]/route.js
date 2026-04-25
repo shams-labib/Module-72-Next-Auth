@@ -26,10 +26,13 @@ export const authOptions = {
       async authorize(credentials, req) {
         const { username, password, secretCode } = credentials;
 
+        // Own logic
+        // Find user
         const user = userList.find((u) => u.name == username);
         if (!user) {
           return null;
         }
+        // Find password
 
         const isPasswordOk = user.password == password;
         if (isPasswordOk) {
